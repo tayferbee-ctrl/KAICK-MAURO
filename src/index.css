@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-darkest: #05190F;
+    --bg-deep: #0B2F21;
+    --bg-surface: #0F4230;
+    --bg-card: #143527;
+    --bg-subtle: #1E3B2C;
+    
+    --gold-highlight: #CDAE71;
+    --gold-light: #DFCA95;
+    --gold-primary: #AF8B52;
+    --gold-dark: #8A6A3D;
+    --gold-bronze: #624F31;
+    --gold-subtle: rgba(175, 139, 82, 0.15);
+  }
+
+  body {
+    background-color: var(--bg-darkest);
+    color: #F1F5F2;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Efeito de granulado cinematográfico sutil */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Vinheta de profundidade radial suave */
+.vignette-radial {
+  background: radial-gradient(circle at 50% 30%, transparent 20%, rgba(5, 25, 15, 0.85) 90%);
+}
+
+/* Texto Dourado Metálico */
+.text-gold-metallic {
+  background: linear-gradient(135deg, #F3E5C2 0%, #CDAE71 30%, #AF8B52 65%, #DFCA95 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Borda Metálica Fina e Brilho Sutil */
+.gold-border {
+  border: 1px solid rgba(175, 139, 82, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(5, 25, 15, 0.8), inset 0 1px 0 rgba(205, 174, 113, 0.15);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(205, 174, 113, 0.45);
+  box-shadow: 0 0 25px -4px rgba(175, 139, 82, 0.25), inset 0 1px 0 rgba(243, 229, 194, 0.3);
+}
+
+/* Botão CTA Principal Dourado Metálico de Alta Conversão */
+.btn-gold-cta {
+  background: linear-gradient(135deg, #DFCA95 0%, #CDAE71 35%, #AF8B52 75%, #8A6A3D 100%);
+  color: #05190F;
+  font-weight: 700;
+  box-shadow: 0 12px 32px -6px rgba(175, 139, 82, 0.45), 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold-cta:hover {
+  background: linear-gradient(135deg, #F3E5C2 0%, #DFCA95 35%, #CDAE71 75%, #AF8B52 100%);
+  box-shadow: 0 16px 40px -4px rgba(205, 174, 113, 0.6), 0 4px 12px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-gold-cta:active {
+  transform: translateY(1px);
+  box-shadow: 0 6px 18px -4px rgba(175, 139, 82, 0.4);
+}
+
+/* Shimmer animation no botão */
+.btn-gold-cta::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 80%
+  );
+  transform: rotate(25deg) translateY(-100%);
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(25deg) translateY(-120%);
+  }
+  20%, 100% {
+    transform: rotate(25deg) translateY(120%);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #05190F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3B2C;
+  border-radius: 9999px;
+  border: 1px solid rgba(175, 139, 82, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8A6A3D;
+}
